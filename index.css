@@ -14,3 +14,12 @@ h1 {
 #text-color-green {
   color: green;
 }
+
+#p-insecure-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #D5D4D8
+}
