@@ -44,7 +44,6 @@ button {
 
 #text-generate {
   font-family: 'Inter';
-  /* padding-left: 10px; */
   flex: none;
   order: 1;
   flex-grow: 0;

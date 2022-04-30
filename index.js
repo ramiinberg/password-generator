@@ -1,5 +1,4 @@
 let passwordCharacters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789$~|>=<+^%#&\/*@{}[]().?!:;,-_"
-console.log(passwordCharacters.length)
 let firstPassword = document.getElementById("first-pass-el")
 let secondPassword = document.getElementById("second-pass-el")
 let thirdPassword = document.getElementById("third-pass-el")
