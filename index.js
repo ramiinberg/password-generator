@@ -1,8 +1,8 @@
-let passwordCharacters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789$~|>=<+^%#&\/*@{}[]().?!:;,-_"
-let firstPassword = document.getElementById("first-pass-el")
-let secondPassword = document.getElementById("second-pass-el")
-let thirdPassword = document.getElementById("third-pass-el")
-let fourthPassword = document.getElementById("fourth-pass-el")
+const passwordCharacters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789$~|>=<+^%#&\/*@{}[]().?!:;,-_"
+const firstPassword = document.getElementById("first-pass-el")
+const secondPassword = document.getElementById("second-pass-el")
+const thirdPassword = document.getElementById("third-pass-el")
+const fourthPassword = document.getElementById("fourth-pass-el")
 const passwordLength = 20;
 
 function generateRandomPassword() {
