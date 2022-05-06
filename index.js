@@ -4,6 +4,9 @@ const secondPassword = document.getElementById("second-pass-el")
 const thirdPassword = document.getElementById("third-pass-el")
 const fourthPassword = document.getElementById("fourth-pass-el")
 const passwordLength = 20;
+const lettersCheckbox = document.getElementById("letters")
+
+let isLettersEnabled = true
 
 function generateRandomPassword() {
   let newPassword = ''
@@ -13,6 +16,18 @@ function generateRandomPassword() {
   }
   return newPassword
 }
+
+lettersCheckbox.addEventListener("click", function () {
+  isLettersEnabled = refreshEnabledValue(lettersCheckbox)
+})
+
+function refreshEnabledValue(checkbox, isEnabled) {
+  if(checkbox.checked) {
+    return true
+  } 
+  return false
+}
+
 
 function startProgram() {
   firstPassword.textContent = generateRandomPassword()
