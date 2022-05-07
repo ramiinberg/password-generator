@@ -41,14 +41,17 @@ function generateRandomPassword() {
 
 lettersCheckbox.addEventListener("click", function () {
   isLettersEnabled = refreshEnabledValue(lettersCheckbox)
+  shouldCheckboxButtonBeDisabled()
 })
 
 specialsCheckbox.addEventListener("click", function () {
   isSpecialsEnabled = refreshEnabledValue(specialsCheckbox)
+  shouldCheckboxButtonBeDisabled()
 })
 
 numbersCheckbox.addEventListener("click", function () {
   isNumbersEnabled = refreshEnabledValue(numbersCheckbox)
+  shouldCheckboxButtonBeDisabled()
 })
 
 
@@ -57,6 +60,15 @@ function refreshEnabledValue(checkbox) {
     return true
   } 
   return false
+}
+
+function shouldCheckboxButtonBeDisabled() {
+  if(!isLettersEnabled && !isNumbersEnabled && !isSpecialsEnabled) {
+    generateButton.disabled = true
+  }
+  else {
+    generateButton.disabled = false
+  }
 }
 
 
