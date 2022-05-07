@@ -1,4 +1,3 @@
-const passwordCharacters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz123456789$~|>=<+^%#&\/*@{}[]().?!:;,-_"
 const firstPassword = document.getElementById("first-pass-el")
 const secondPassword = document.getElementById("second-pass-el")
 const thirdPassword = document.getElementById("third-pass-el")
@@ -7,17 +6,36 @@ const passwordLength = 20;
 const lettersCheckbox = document.getElementById("letters")
 const specialsCheckbox = document.getElementById("specials")
 const numbersCheckbox = document.getElementById("numbers")
+const generateButton = document.getElementById("btn-generate")
 
 let isLettersEnabled = true
 let isNumbersEnabled = true
 let isSpecialsEnabled = true
 
 function generateRandomPassword() {
-  let newPassword = ''
-  for(let i = 0; i < passwordLength; i++) {
-    const randomCharacter = Math.floor(Math.random() * passwordCharacters.length)
-    newPassword += passwordCharacters[randomCharacter]
+
+  let passwordCharacters = ""
+
+  if(isLettersEnabled) {
+    passwordCharacters += "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
   }
+
+  if(isNumbersEnabled) {
+    passwordCharacters += "0123456789"
+  }
+
+  if(isSpecialsEnabled) {
+    passwordCharacters += "$~|>=<+^%#&\/*@{}[]().?!:;,-_"
+  }
+
+  let newPassword = ''
+  if(passwordCharacters) {
+    for(let i = 0; i < passwordLength; i++) {
+      const randomCharacter = Math.floor(Math.random() * passwordCharacters.length)
+      newPassword += passwordCharacters[randomCharacter]
+    }
+  }
+
   return newPassword
 }
 
@@ -27,12 +45,10 @@ lettersCheckbox.addEventListener("click", function () {
 
 specialsCheckbox.addEventListener("click", function () {
   isSpecialsEnabled = refreshEnabledValue(specialsCheckbox)
-  console.log("isSpecialsEnabled", isSpecialsEnabled)
 })
 
 numbersCheckbox.addEventListener("click", function () {
   isNumbersEnabled = refreshEnabledValue(numbersCheckbox)
-  console.log("isNumbersEnabled", isNumbersEnabled)
 })
 
 
