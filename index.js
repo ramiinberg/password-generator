@@ -5,8 +5,12 @@ const thirdPassword = document.getElementById("third-pass-el")
 const fourthPassword = document.getElementById("fourth-pass-el")
 const passwordLength = 20;
 const lettersCheckbox = document.getElementById("letters")
+const specialsCheckbox = document.getElementById("specials")
+const numbersCheckbox = document.getElementById("numbers")
 
 let isLettersEnabled = true
+let isNumbersEnabled = true
+let isSpecialsEnabled = true
 
 function generateRandomPassword() {
   let newPassword = ''
@@ -21,7 +25,18 @@ lettersCheckbox.addEventListener("click", function () {
   isLettersEnabled = refreshEnabledValue(lettersCheckbox)
 })
 
-function refreshEnabledValue(checkbox, isEnabled) {
+specialsCheckbox.addEventListener("click", function () {
+  isSpecialsEnabled = refreshEnabledValue(specialsCheckbox)
+  console.log("isSpecialsEnabled", isSpecialsEnabled)
+})
+
+numbersCheckbox.addEventListener("click", function () {
+  isNumbersEnabled = refreshEnabledValue(numbersCheckbox)
+  console.log("isNumbersEnabled", isNumbersEnabled)
+})
+
+
+function refreshEnabledValue(checkbox) {
   if(checkbox.checked) {
     return true
   } 
