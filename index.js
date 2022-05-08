@@ -2,7 +2,6 @@ const firstPassword = document.getElementById("first-pass-el")
 const secondPassword = document.getElementById("second-pass-el")
 const thirdPassword = document.getElementById("third-pass-el")
 const fourthPassword = document.getElementById("fourth-pass-el")
-const passwordLength = 20;
 const lettersCheckbox = document.getElementById("letters")
 const specialsCheckbox = document.getElementById("specials")
 const numbersCheckbox = document.getElementById("numbers")
@@ -13,6 +12,7 @@ const output = document.getElementById("output")
 let isLettersEnabled = true
 let isNumbersEnabled = true
 let isSpecialsEnabled = true
+let passwordLength = 20;
 
 
 lettersCheckbox.addEventListener("click", function () {
@@ -31,7 +31,7 @@ numbersCheckbox.addEventListener("click", function () {
 })
 
 passwordSlider.onchange = function() {
-  console.log('this.value', this.value)
+  passwordLength = this.value
   output.textContent = this.value
 }
 
