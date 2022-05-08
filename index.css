@@ -3,13 +3,7 @@ body {
   background-color: #1F2937;
   color:white;
   padding: 200px 100px;
-}
-
-h1 {
-  font-weight: 800;
-  font-size: 40px;
-  line-height: 40px;
-  letter-spacing: -0.025em;
+  margin: 0
 }
 
 button {
@@ -18,6 +12,12 @@ button {
   border: none;
 }
 
+h1 {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: -0.025em;
+}
 
 #text-color-green {
   color: #55F991;
@@ -76,8 +76,9 @@ button {
   text-align: center;
 }
 
-.slidecontainer {
-  width:100%
+.checkboxes {
+  width:100%;
+  margin-bottom: 20px;
 }
 
 .slider {
