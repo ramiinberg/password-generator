@@ -10,8 +10,8 @@
     <p id="p-insecure-text">Never use an insecure password again.</p>
     <button id="btn-generate" onclick="startProgram()"><i class="fa-solid fa-bolt"></i><span id="text-generate">Generate Passwords</span></button>
     <div class="slidecontainer">
-      <label for="range-password">Password length</label>
-      <input type="range" min="5" max="30" value="20" id="range-password">
+      <label for="range-password">Password length: <span id="output">20</span></label>
+      <input type="range" min="5" max="30" value="20" id="range-password" class="slider" onchange="changeSliderOutput(this.value)">
     </div>
     <div>
       <input type="checkbox" id="letters" name="letters" checked>

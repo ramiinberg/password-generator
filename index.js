@@ -7,10 +7,33 @@ const lettersCheckbox = document.getElementById("letters")
 const specialsCheckbox = document.getElementById("specials")
 const numbersCheckbox = document.getElementById("numbers")
 const generateButton = document.getElementById("btn-generate")
+const passwordSlider = document.getElementById("range-password")
+const output = document.getElementById("output")
 
 let isLettersEnabled = true
 let isNumbersEnabled = true
 let isSpecialsEnabled = true
+
+
+lettersCheckbox.addEventListener("click", function () {
+  isLettersEnabled = refreshEnabledValue(lettersCheckbox)
+  shouldCheckboxButtonBeDisabled()
+})
+
+specialsCheckbox.addEventListener("click", function () {
+  isSpecialsEnabled = refreshEnabledValue(specialsCheckbox)
+  shouldCheckboxButtonBeDisabled()
+})
+
+numbersCheckbox.addEventListener("click", function () {
+  isNumbersEnabled = refreshEnabledValue(numbersCheckbox)
+  shouldCheckboxButtonBeDisabled()
+})
+
+passwordSlider.onchange = function() {
+  console.log('this.value', this.value)
+  output.textContent = this.value
+}
 
 function generateRandomPassword() {
 
@@ -38,22 +61,6 @@ function generateRandomPassword() {
 
   return newPassword
 }
-
-lettersCheckbox.addEventListener("click", function () {
-  isLettersEnabled = refreshEnabledValue(lettersCheckbox)
-  shouldCheckboxButtonBeDisabled()
-})
-
-specialsCheckbox.addEventListener("click", function () {
-  isSpecialsEnabled = refreshEnabledValue(specialsCheckbox)
-  shouldCheckboxButtonBeDisabled()
-})
-
-numbersCheckbox.addEventListener("click", function () {
-  isNumbersEnabled = refreshEnabledValue(numbersCheckbox)
-  shouldCheckboxButtonBeDisabled()
-})
-
 
 function refreshEnabledValue(checkbox) {
   if(checkbox.checked) {
